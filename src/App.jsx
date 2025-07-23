@@ -55,10 +55,13 @@ function App() {
         return (
             <div className={`container__app-content`}>
                 <div className={`container__app-content-base`}>
-                    <motion.div style={{y: sm}} className={`container__app-content-base-title`}>CALEDONIA</motion.div>
-                    <motion.div style={{y: md}} className={`container__app-content-base-title`}>CONSULTING</motion.div>
-                    <motion.div style={{y: lg}} className={`container__app-content-base-title`}>LLC</motion.div>
-                    <motion.div style={{y: xl}} className={`container__app--content-base-slogan`}>Innovating for a Smarter Future</motion.div>
+                    {/*<motion.div style={{y: sm}} className={`container__app-content-base-title`}>CALEDONIA</motion.div>*/}
+                    {/*<motion.div style={{y: md}} className={`container__app-content-base-title`}>CONSULTING</motion.div>*/}
+                    {/*<motion.div style={{y: lg}} className={`container__app-content-base-title`}>LLC</motion.div>*/}
+                    <motion.div style={{y: lg}} className={`container__app-content-base-title`}>CALEDONIA CONSULTING LLC</motion.div>
+                    <motion.div style={{y: xl}} className={`container__app--content-base-slogan`}>Innovating for a
+                        Smarter Future
+                    </motion.div>
                 </div>
             </div>
         )
