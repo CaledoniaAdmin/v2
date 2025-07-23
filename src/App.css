@@ -1,0 +1,108 @@
+.container__app--main { /* App Parent */
+  background-color: #031b3c;
+  width: 100vw;
+  font-family: "National Park", sans-serif;
+
+  .container__app-content-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 20px;
+  }
+
+  .container__app-content-container { /* Hero() */
+    position: relative;
+    width: 100%;
+    height: calc(1500px + 100vh);
+
+  }
+
+  .container__app-content { /* Content Parent OR SL image */
+    display: flex;
+    flex-direction: row;
+    background-color: #031b3c;
+    height: 100vh;
+    position: relative;
+
+    svg {
+      cursor: pointer;
+      background: #38b5f9;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+
+    .container__app-content-base {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+
+      .container__app-content-base-title {
+        font-size: 55px;
+        font-weight: 700;
+        font-family: sans-serif;
+        width: 60%;
+        line-height: 1em;
+        color:  #fefefe;
+        text-align: center;
+      }
+
+      .container__app--content-base-slogan {
+        color: #429fd2;
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .container__app--content-base-slideshow {
+        display: flex;
+        flex-direction: row;
+        margin-top: 55px;
+
+        .container__app-content-base-slide {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      .container__app--content-base-layout {
+        display: flex;
+        flex-direction: row;
+        margin-top: 55px;
+
+        .container__app-content-base-layout-pane {
+          margin-right: 25px;
+
+          .container__app-content-base-layout-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .container__app-content-base-layout-card-content {
+              display: flex;
+              flex-direction: column;
+              align-items: start;
+              margin-left: 10px;
+
+              .container__app-content-base-layout-card-title {
+                color: #38b5f9;
+                font-weight: 700;
+              }
+            }
+          }
+
+        }
+      }
+
+    }
+
+  }
+
+}
+
+
