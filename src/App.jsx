@@ -20,7 +20,7 @@ function App() {
     // • Is your website link active on the CBE Search Portal?
 
     const lenis = useLenis((lenis) => {
-        console.log(lenis)
+        // console.log(lenis)
     })
 
     // Dots
@@ -234,7 +234,7 @@ function App() {
     }
 
     // IMPROVEMENT ON DOT FOR POSITIONING
-    const BuildDot = ({top, bottom, left, right, size, color}) => {
+    const BuildDot = ({top, bottom, left, right, size, color, className}) => {
         const dotStyle = {
             position: 'absolute',
             width: `${size}px`,
@@ -248,19 +248,25 @@ function App() {
         left ? dotStyle.left = left : dotStyle
         right ? dotStyle.right = right : dotStyle
 
-        console.log('dotStyle: ', dotStyle)
+        // console.log('dotStyle: ', dotStyle)
 
-        return <div style={dotStyle}></div>
+        return <div className={className} style={dotStyle}></div>
     }
 
     const dynamicBuildDot = () => {
         let newDots = []
         for (let i = 0; i < 100; i++) {
-            const top = ""
-            const bottom = ""
-            const left = ""
-            const right = ""
+            const top = Math.random() * (650 - 10) + 10 //Math.random() * (max - min) + min;
+            const bottom = Math.random() * (150 - 10) + 10
+            const left = Math.random() * (600 - 10) + 10
+            const right = Math.random() * (600 - 10) + 10
+            const size = Math.floor(5 * Math.random()) + 7
+            const color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+
+            newDots.push({id: i, top, bottom, left, right, size, color})
         }
+
+        return newDots
     }
 
     const Dots = [
@@ -641,21 +647,23 @@ function App() {
                 height: "100%"
             }}>
                 <div className={`container__app-dots`}>
-                    <BuildDot className={`dot`} left={25} top={600} size={200} color={'white'}/>
-                    <BuildDot className={`dot`} right={35} top={100} size={175} color={'#38b5f9'}/>
-                    <BuildDot className={`dot`} right={125} top={700} size={100} color={'grey'}/>
-                    <BuildDot className={`dot`} left={25} top={600} size={50} color={'#429fd2'}/>
-                    <BuildDot className={`dot`} right={75} top={500} size={150} color={'white'}/>
-                    <BuildDot className={`dot`} left={175} top={100} size={150} color={'white'}/>
-                    <BuildDot className={`dot`} right={175} top={100} size={150} color={'green'}/>
+                    <BuildDot className={`dot desktop`} left={"5%"} top={600} size={200} color={'#429fd2'}/>
+                    <BuildDot className={`dot desktop`} right={"25%"} top={600} size={135} color={'#38b5f9'}/>
+                    <BuildDot className={`dot desktop`} left={"17.5%"} top={510} size={105} color={'#38b5f9'}/>
+                    <BuildDot className={`dot desktop`} left={"34%"} top={620} size={95} color={'white'}/>
+                    <BuildDot className={`dot desktop`} right={"12%"} top={675} size={100} color={'grey'}/>
+                    <BuildDot className={`dot desktop`} right={"45%"} top={700} size={100} color={'grey'}/>
+                    <BuildDot className={`dot desktop`} left={"25%"} top={700} size={100} color={'grey'}/>
+                    <BuildDot className={`dot desktop`} left={"2%"} top={600} size={50} color={'grey'}/>
+                    <BuildDot className={`dot desktop`} right={"5%"} top={500} size={150} color={'white'}/>
+                    <BuildDot className={`dot desktop`} left={"8%"} top={100} size={150} color={'grey'}/>
+                    <BuildDot className={`dot desktop`} right={"11%"} top={100} size={150} color={'#429fd2'}/>
 
-                    {/*{Dots.map((dot) => (*/}
-                    {/*    <Dot key={dot.id} className={`dot`} x={dot.x} y={dot.y} size={dot.size} color={'#ffffff'}/>*/}
-                    {/*))}*/}
                 </div>
                 <div className={`container__app-overlay`}></div>
                 <div className={`container__app--main`}>
                     <div className={`container__app-content-header`}>
+
                         <div><HouseIcon size={32} color="#38b5f9"/></div>
                         <div></div>
                         <div>
