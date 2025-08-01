@@ -62,7 +62,7 @@
     display: flex;
     flex-direction: row;
     /*background-color: #031b3c;*/
-    height: 80vh;
+    height: 90vh;
     position: relative;
 
     svg {
@@ -90,6 +90,36 @@
         text-align: center;
       }
 
+      .container__app-content-base-subtitle {
+        font-size: 45px;
+        font-weight: 700;
+        font-family: sans-serif;
+        width: 60%;
+        line-height: 1em;
+        color:  #fefefe;
+        text-align: center;
+      }
+
+      .container__app-content-base-description {
+        text-align: center;
+        font-weight: 600;
+        width: 55%;
+        margin-top: 15px;
+      }
+
+      .container__app-content-base-mission {
+        width: 70vw;
+
+        p {
+          font-size: 24px;
+          font-weight: 500;
+        }
+
+        span {
+          color: #38b5f9;
+        }
+      }
+
       .container__app--content-base-slogan {
         color: #429fd2;
         font-size: 24px;
@@ -100,11 +130,13 @@
         display: flex;
         flex-direction: row;
         margin-top: 55px;
+        gap: 15px;
 
         .container__app-content-base-slide {
           display: flex;
           flex-direction: column;
           align-items: center;
+          width: 25%;
         }
       }
 

@@ -74,3 +74,11 @@ button:focus-visible {
     visibility: hidden;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .container__app--content-base-slideshow {
+    display: flex;
+    flex-direction: column !important;
+    gap: 25px;
+  }
+}

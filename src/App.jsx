@@ -8,7 +8,8 @@ import {
     CodesandboxLogoIcon,
     PlugsIcon,
     LightbulbIcon,
-    AirplaneTakeoffIcon
+    AirplaneTakeoffIcon,
+    AtIcon
 } from '@phosphor-icons/react'
 import { ReactLenis, useLenis } from "lenis/react";
 import { motion, useScroll, useTransform, useMotionTemplate, useMotionValueEvent } from 'motion/react'
@@ -93,43 +94,39 @@ function App() {
         return (
             <div className={`container__app-content`}>
                 <div className={`container__app-content-base`}>
-                    <div className={`container__app-content-base-title`}>OUR PRODUCTS & SERVICES</div>
+                    <div className={`container__app-content-base-title`}>PRODUCTS & SERVICES</div>
                     <div className={`container__app--content-base-slideshow`}>
                         <div className={`container__app-content-base-slide`}>
                             <motion.div style={{y:sm}}>
                                 <CloudIcon size={56} color="#ffffff"/>
                             </motion.div>
-                            <motion.div style={{y:md}} className={`container__app-content-base-title`}>Cloud Services</motion.div>
-                            <motion.div style={{y:lg}} className={`container__app-content-base-description`}>Scalable solutions for modern
-                                business needs
+                            <motion.div style={{y:md}} className={`container__app-content-base-subtitle`}>Cloud</motion.div>
+                            <motion.div style={{y:md}} className={`container__app-content-base-description`}>Scalable solutions for modern
+                                business needs; AWS, Azure, Google, doesn't matter.
                             </motion.div>
                         </div>
                         <div className={`container__app-content-base-slide`}>
                             <motion.div style={{y:sm}}>
                                 <CodesandboxLogoIcon size={56} color="#ffffff"/>
                             </motion.div>
-                            <motion.div style={{y: md}} className={`container__app-content-base-title`}>Software
-                                Solutions
+                            <motion.div style={{y: md}} className={`container__app-content-base-subtitle`}>Software
                             </motion.div>
-                            <motion.div style={{y: lg}}
-                                        className={`container__app-content-base-description`}>Custom-developed for
-                                diverse
-                                business needs
+                            <motion.div style={{y: md}} className={`container__app-content-base-description`}>Full stack means just that: Front end, Back end, API, Database, Tested and Continuously Deployed to your environment
                             </motion.div>
                         </div>
                         <div className={`container__app-content-base-slide`}>
                             <motion.div style={{y:sm}}>
                                 <ComputerTowerIcon size={56} color="#ffffff"/>
                             </motion.div>
-                            <motion.div style={{y: md}} className={`container__app-content-base-title`}>Enterprise Hardware</motion.div>
-                            <motion.div style={{y: lg}} className={`container__app-content-base-description`}>High-performance devices for industrial applications</motion.div>
+                            <motion.div style={{y: md}} className={`container__app-content-base-subtitle`}>Hardware</motion.div>
+                            <motion.div style={{y: md}} className={`container__app-content-base-description`}>High-performance devices for industrial applications; We'll review your systems and recommend scalable solutions</motion.div>
                         </div>
                         <div className={`container__app-content-base-slide`}>
                             <motion.div style={{y:sm}}>
                                 <PlugsIcon size={56} color="#ffffff"/>
                             </motion.div>
-                            <motion.div style={{y: md}} className={`container__app-content-base-title`}>Integration Support</motion.div>
-                            <motion.div style={{y: lg}} className={`container__app-content-base-description`}>Seamless integration with existing systems</motion.div>
+                            <motion.div style={{y: md}} className={`container__app-content-base-subtitle`}>Support</motion.div>
+                            <motion.div style={{y: md}} className={`container__app-content-base-description`}>Seamless integration with existing systems; Green field to legacy systems, we can manage</motion.div>
                         </div>
                     </div>
                 </div>
@@ -142,6 +139,16 @@ function App() {
             <div className={`container__app-content`}>
                 <div className={`container__app-content-base`}>
                     <div className={`container__app-content-base-title`}>OUR VISION AND MISSION</div>
+                    <div className={`container__app-content-base-mission`}>
+                        <p><span>Caledonia Consulting</span> provides strategic consulting technology
+                            services and managed services to commercial, not for profit and
+                            government organizations. Our Consulting can <span>mobilize</span> the right <span>people</span>, <span>skills</span> and <span>technologies</span> to help organizations improve their
+                            performance. As a Minority Owned Small Business with HUBZone (Federal)
+                            and CBE (DC) certification, <span>Caledonia Consulting</span> is committed to excellence and
+                            creating innovative and
+                            flexible solutions for our State and Federal clients.</p>
+                    </div>
+
                     <div className={`container__app--content-base-layout`}>
                         <div className={`container__app-content-base-layout-pane`}>
                             <div>Our Mission is Technology that works for you</div>
@@ -247,8 +254,6 @@ function App() {
         bottom ? dotStyle.bottom = bottom : dotStyle
         left ? dotStyle.left = left : dotStyle
         right ? dotStyle.right = right : dotStyle
-
-        // console.log('dotStyle: ', dotStyle)
 
         return <div className={className} style={dotStyle}></div>
     }
@@ -622,21 +627,6 @@ function App() {
         }
     ]
 
-    const generateDots = (numDots) => {
-        let newDots = []
-        for (let i = 0; i < numDots; i++) {
-            const x = (window.innerWidth * Math.random())
-            const y = (window.innerHeight * Math.random())
-            const size = Math.floor(5 * Math.random()) + 7
-            const color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
-            newDots.push({id: i, x, y, size, color})
-        }
-
-        console.log('newDots: ', newDots)
-    }
-
-    // generateDots(20)
-
     return (
         <>
             <ReactLenis root/>
@@ -667,9 +657,11 @@ function App() {
                         <div className={`container__app-content-tab`}>
                             <HouseIcon size={32} color="#38b5f9"/><span>HOME</span>
                         </div>
-
                         <div></div>
 
+                        <a className={`container__app-content-tab`} href={`mailto:hello@caledoniallc.io?subject=Contact%20%Us%20%Request`} rel={`noopener`} target={`_blank`}><AtIcon size={32} color="#38b5f9"/><span>CONTACT US</span></a>
+
+                        <div></div>
                         {/*<div>*/}
                         {/*    <img src={`./CBE.png`}/>*/}
                         {/*</div>*/}
@@ -687,7 +679,7 @@ function App() {
                     <div className={`container__app-content-container`}>
                         {/*<CenterImage />*/}
                         <ParallaxHome sm={sm} lg={lg} xl={xl} md={md}/>
-                        {/*<ParallaxServices sm={sm} lg={lg} xl={xl} md={md}/>*/}
+                        <ParallaxServices sm={sm} lg={lg} xl={xl} md={md}/>
                         <ParallaxMission/>
                     </div>
                 </div>
