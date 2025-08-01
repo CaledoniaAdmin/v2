@@ -36,6 +36,19 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding-top: 20px;
+
+    .container__app-content-tab {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        font-size: 18px;
+        font-weight: 800;
+        color: #38b5f9;
+      }
+    }
   }
 
   .container__app-content-container { /* Hero() */
@@ -68,7 +81,7 @@
       width: 100vw;
 
       .container__app-content-base-title {
-        font-size: 55px;
+        font-size: 75px;
         font-weight: 700;
         font-family: sans-serif;
         width: 60%;

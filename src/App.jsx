@@ -77,10 +77,10 @@ function App() {
         return (
             <div className={`container__app-content`}>
                 <div className={`container__app-content-base`}>
-                    {/*<motion.div style={{y: sm}} className={`container__app-content-base-title`}>CALEDONIA</motion.div>*/}
-                    {/*<motion.div style={{y: md}} className={`container__app-content-base-title`}>CONSULTING</motion.div>*/}
-                    {/*<motion.div style={{y: lg}} className={`container__app-content-base-title`}>LLC</motion.div>*/}
-                    <motion.div style={{y: lg}} className={`container__app-content-base-title`}>CALEDONIA CONSULTING LLC</motion.div>
+                    <motion.div style={{y: sm}} className={`container__app-content-base-title`}>CALEDONIA</motion.div>
+                    <motion.div style={{y: md}} className={`container__app-content-base-title`}>CONSULTING</motion.div>
+                    <motion.div style={{y: lg}} className={`container__app-content-base-title`}>LLC</motion.div>
+                    {/*<motion.div style={{y: lg}} className={`container__app-content-base-title`}>CALEDONIA CONSULTING LLC</motion.div>*/}
                     <motion.div style={{y: xl}} className={`container__app--content-base-slogan`}>Innovating for a
                         Smarter Future
                     </motion.div>
@@ -664,11 +664,25 @@ function App() {
                 <div className={`container__app--main`}>
                     <div className={`container__app-content-header`}>
 
-                        <div><HouseIcon size={32} color="#38b5f9"/></div>
-                        <div></div>
-                        <div>
-                            <a href={`./CaledoniaConsultingCapStatement.pdf`} download><ScrollIcon size={32} color="#38b5f9"/></a>
+                        <div className={`container__app-content-tab`}>
+                            <HouseIcon size={32} color="#38b5f9"/><span>HOME</span>
                         </div>
+
+                        <div></div>
+
+                        {/*<div>*/}
+                        {/*    <img src={`./CBE.png`}/>*/}
+                        {/*</div>*/}
+                        {/*<div>*/}
+                        {/*    <img src={`./HUBZone.png`} height={120} width={100}/>*/}
+                        {/*</div>*/}
+                        {/*<div style={{backgroundColor: "white"}}>*/}
+                        {/*    <img src={`./PMI.svg`} width={100}/>*/}
+                        {/*</div>*/}
+
+                        <a className={`container__app-content-tab`} href={`./CaledoniaConsultingCapStatement.pdf`}
+                           download><ScrollIcon
+                            size={32} color="#38b5f9"/><span>CAPABILITY STATEMENT</span></a>
                     </div>
                     <div className={`container__app-content-container`}>
                         {/*<CenterImage />*/}
