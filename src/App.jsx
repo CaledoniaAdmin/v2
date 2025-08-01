@@ -10,6 +10,7 @@ import {
     LightbulbIcon,
     AirplaneTakeoffIcon
 } from '@phosphor-icons/react'
+import { ReactLenis, useLenis } from "lenis/react";
 import { motion, useScroll, useTransform, useMotionTemplate, useMotionValueEvent } from 'motion/react'
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
     // • Capabilities Statement on your website
     // • Display the CBE Logo (requires DSLBD approval) • Include Capabilities, Differentiators and Past Performance • Keep Contact Information up to date
     // • Is your website link active on the CBE Search Portal?
+
+    const lenis = useLenis((lenis) => {
+        console.log(lenis)
+    })
 
     // Dots
     const [dots, setDots] = useState([])
@@ -60,7 +65,7 @@ function App() {
 
         useMotionValueEvent(scrollYProgress, "change", (latest) => console.log(latest))
 
-        return <motion.div className={className} ref={ref}>
+        return <motion.div className={className}>
             <div className={`container__app-content-base`}>
                 <div className={`container__app-content-base-title`}>CALEDONIA CONSULTING LLC</div>
                 <div className={`container__app--content-base-slogan`}>Innovating for a Smarter Future</div>
@@ -246,6 +251,16 @@ function App() {
         console.log('dotStyle: ', dotStyle)
 
         return <div style={dotStyle}></div>
+    }
+
+    const dynamicBuildDot = () => {
+        let newDots = []
+        for (let i = 0; i < 100; i++) {
+            const top = ""
+            const bottom = ""
+            const left = ""
+            const right = ""
+        }
     }
 
     const Dots = [
@@ -617,41 +632,46 @@ function App() {
     // generateDots(20)
 
     return (
-        <div style={{
-            position: "relative",
-            backgroundColor: "black",
-            backgroundImage: "linear-gradient(#0f0f0f, #031b3c)",
-            height: "100%"
-        }}>
+        <>
+            <ReactLenis root/>
+            <div style={{
+                position: "relative",
+                backgroundColor: "black",
+                backgroundImage: "linear-gradient(#0f0f0f, #031b3c)",
+                height: "100%"
+            }}>
+                <div className={`container__app-dots`}>
+                    <BuildDot className={`dot`} left={25} top={600} size={200} color={'white'}/>
+                    <BuildDot className={`dot`} right={35} top={100} size={175} color={'#38b5f9'}/>
+                    <BuildDot className={`dot`} right={125} top={700} size={100} color={'grey'}/>
+                    <BuildDot className={`dot`} left={25} top={600} size={50} color={'#429fd2'}/>
+                    <BuildDot className={`dot`} right={75} top={500} size={150} color={'white'}/>
+                    <BuildDot className={`dot`} left={175} top={100} size={150} color={'white'}/>
+                    <BuildDot className={`dot`} right={175} top={100} size={150} color={'green'}/>
 
-            <div className={`container__app-dots`}>
-                <BuildDot className={`dot`} left={25} top={600} size={200} color={'white'}/>
-                <BuildDot className={`dot`} right={35} top={100} size={175} color={'#38b5f9'}/>
-                <BuildDot className={`dot`} right={125} top={700} size={100} color={'grey'}/>
-                <BuildDot className={`dot`} left={25} top={600} size={50} color={'#429fd2'}/>
-                <BuildDot className={`dot`} right={75} top={500} size={150} color={'white'}/>
-                <BuildDot className={`dot`} left={175} top={100} size={150} color={'white'}/>
-                <BuildDot className={`dot`} right={175} top={100} size={150} color={'green'}/>
+                    {/*{Dots.map((dot) => (*/}
+                    {/*    <Dot key={dot.id} className={`dot`} x={dot.x} y={dot.y} size={dot.size} color={'#ffffff'}/>*/}
+                    {/*))}*/}
+                </div>
+                <div className={`container__app-overlay`}></div>
+                <div className={`container__app--main`}>
+                    <div className={`container__app-content-header`}>
+                        <div><HouseIcon size={32} color="#38b5f9"/></div>
+                        <div></div>
+                        <div>
+                            <a href={`./CaledoniaConsultingCapStatement.pdf`} download><ScrollIcon size={32} color="#38b5f9"/></a>
+                        </div>
+                    </div>
+                    <div className={`container__app-content-container`}>
+                        {/*<CenterImage />*/}
+                        <ParallaxHome sm={sm} lg={lg} xl={xl} md={md}/>
+                        {/*<ParallaxServices sm={sm} lg={lg} xl={xl} md={md}/>*/}
+                        <ParallaxMission/>
+                    </div>
+                </div>
+            </div>
+        </>
 
-                {/*{Dots.map((dot) => (*/}
-                {/*    <Dot key={dot.id} className={`dot`} x={dot.x} y={dot.y} size={dot.size} color={'#ffffff'}/>*/}
-                {/*))}*/}
-            </div>
-            <div className={`container__app-overlay`}></div>
-            <div ref={container} className={`container__app--main`}>
-                <div className={`container__app-content-header`}>
-                    <div><HouseIcon size={32} color="#38b5f9"/></div>
-                    <div></div>
-                    <div><ScrollIcon size={32} color="#38b5f9"/></div>
-                </div>
-                <div className={`container__app-content-container`}>
-                    {/*<CenterImage />*/}
-                    <ParallaxHome sm={sm} lg={lg} xl={xl} md={md}/>
-                    {/*<ParallaxServices sm={sm} lg={lg} xl={xl} md={md}/>*/}
-                    <ParallaxMission/>
-                </div>
-            </div>
-        </div>
     )
 }
 
