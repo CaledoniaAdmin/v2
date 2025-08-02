@@ -92,7 +92,7 @@ function App() {
 
     const ParallaxServices = ({sm, md, lg, xl}) => {
         return (
-            <div className={`container__app-content`}>
+            <div className={`container__app-content desktop`}>
                 <div className={`container__app-content-base`}>
                     <div className={`container__app-content-base-title`}>PRODUCTS & SERVICES</div>
                     <div className={`container__app--content-base-slideshow`}>
@@ -136,7 +136,7 @@ function App() {
 
     const ParallaxMission = () => {
         return (
-            <div className={`container__app-content`}>
+            <div className={`container__app-content desktop`}>
                 <div className={`container__app-content-base`}>
                     <div className={`container__app-content-base-title`}>OUR VISION AND MISSION</div>
                     <div className={`container__app-content-base-mission`}>
@@ -149,7 +149,7 @@ function App() {
                             flexible solutions for our State and Federal clients.</p>
                     </div>
 
-                    <div className={`container__app--content-base-layout`}>
+                    <div className={`container__app--content-base-layout hide`}>
                         <div className={`container__app-content-base-layout-pane`}>
                             <div>Our Mission is Technology that works for you</div>
                             <div>Technology is at the core of everything we do to be successful</div>
@@ -637,7 +637,7 @@ function App() {
                 height: "100%"
             }}>
                 <div className={`container__app-dots`}>
-                    <BuildDot className={`dot desktop`} left={"5%"} top={600} size={200} color={'#429fd2'}/>
+                    <BuildDot className={`dot`} left={"5%"} top={600} size={200} color={'#429fd2'}/>
                     <BuildDot className={`dot desktop`} right={"25%"} top={600} size={135} color={'#38b5f9'}/>
                     <BuildDot className={`dot desktop`} left={"17.5%"} top={510} size={105} color={'#38b5f9'}/>
                     <BuildDot className={`dot desktop`} left={"34%"} top={620} size={95} color={'white'}/>
@@ -645,23 +645,23 @@ function App() {
                     <BuildDot className={`dot desktop`} right={"45%"} top={700} size={100} color={'grey'}/>
                     <BuildDot className={`dot desktop`} left={"25%"} top={700} size={100} color={'grey'}/>
                     <BuildDot className={`dot desktop`} left={"2%"} top={600} size={50} color={'grey'}/>
-                    <BuildDot className={`dot desktop`} right={"5%"} top={500} size={150} color={'white'}/>
-                    <BuildDot className={`dot desktop`} left={"8%"} top={100} size={150} color={'grey'}/>
-                    <BuildDot className={`dot desktop`} right={"11%"} top={100} size={150} color={'#429fd2'}/>
+                    <BuildDot className={`dot`} right={"5%"} top={500} size={150} color={'white'}/>
+                    <BuildDot className={`dot`} left={"8%"} top={100} size={120} color={'white'}/>
+                    <BuildDot className={`dot`} right={"7%"} top={120} size={150} color={'#429fd2'}/>
 
                 </div>
                 <div className={`container__app-overlay`}></div>
                 <div className={`container__app--main`}>
                     <div className={`container__app-content-header`}>
 
-                        <div className={`container__app-content-tab`}>
+                        <div className={`container__app-content-tab desktop`}>
                             <HouseIcon size={32} color="#38b5f9"/><span>HOME</span>
                         </div>
-                        <div></div>
+                        <div className={`desktop`}></div>
 
                         <a className={`container__app-content-tab`} href={`mailto:hello@caledoniallc.io?subject=Contact%20%Us%20%Request`} rel={`noopener`} target={`_blank`}><AtIcon size={32} color="#38b5f9"/><span>CONTACT US</span></a>
 
-                        <div></div>
+                        <div className={`desktop`}></div>
                         {/*<div>*/}
                         {/*    <img src={`./CBE.png`}/>*/}
                         {/*</div>*/}
@@ -681,6 +681,28 @@ function App() {
                         <ParallaxHome sm={sm} lg={lg} xl={xl} md={md}/>
                         <ParallaxServices sm={sm} lg={lg} xl={xl} md={md}/>
                         <ParallaxMission/>
+                    </div>
+                    <div className={`container__app-content-footer`}>
+                        <div className={`container__app-content-footer-column`}>
+                            <img className={`desktop`} alt={`company logo`} src={`./minilogo.png`} height={`100%`} width={`300px`}/>
+                        </div>
+                        <div className={`container__app-content-footer-column`}>
+                            <h3>CERTS</h3>
+                            <ul>
+                                <li><span>HUBZone</span></li>
+                                <li><span>CBE</span></li>
+                                <li><span>PMI</span></li>
+                            </ul>
+                        </div>
+                        <div className={`container__app-content-footer-column`}>
+                            <h3>ID CODES</h3>
+                            <ul>
+                                <li><span>UEI: </span><span>KCYNKG52REF9</span></li>
+                                <li><span>CAGE: </span><span>9PHT2</span></li>
+                                <li><span>DUNS: </span><span>118981529</span></li>
+                                <li><span>CBE: </span><span>LSDZRE55664112027</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

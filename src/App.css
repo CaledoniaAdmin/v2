@@ -51,6 +51,27 @@
     }
   }
 
+  .container__app-content-footer {
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #00072D;
+
+    .container__app--content-footer-pane {
+      display: flex;
+    }
+
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    h3 {
+      color: #38b5f9;
+    }
+  }
   .container__app-content-container { /* Hero() */
     position: relative;
     width: 100%;
@@ -82,9 +103,7 @@
 
       .container__app-content-base-title {
         font-size: 75px;
-        font-weight: 700;
         font-family: sans-serif;
-        width: 60%;
         line-height: 1em;
         color:  #fefefe;
         text-align: center;
@@ -124,6 +143,7 @@
         color: #429fd2;
         font-size: 24px;
         font-weight: 600;
+        z-index: 3;
       }
 
       .container__app--content-base-slideshow {

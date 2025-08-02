@@ -24,6 +24,8 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -54,6 +56,11 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.hide {
+  display: none;
+  visibility: hidden;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -70,8 +77,8 @@ button:focus-visible {
 @media screen and (max-width: 800px) {
   /* Styles for screens smaller than or equal to 800px */
   .desktop {
-    display: none;
-    visibility: hidden;
+    display: none !important;
+    visibility: hidden !important;
   }
 }
 
@@ -80,5 +87,10 @@ button:focus-visible {
     display: flex;
     flex-direction: column !important;
     gap: 25px;
+  }
+
+  .container__app-content-base-title {
+    font-size: 38px !important;
+    font-weight: 700;
   }
 }
