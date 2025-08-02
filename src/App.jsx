@@ -258,22 +258,6 @@ function App() {
         return <div className={className} style={dotStyle}></div>
     }
 
-    const dynamicBuildDot = () => {
-        let newDots = []
-        for (let i = 0; i < 100; i++) {
-            const top = Math.random() * (650 - 10) + 10 //Math.random() * (max - min) + min;
-            const bottom = Math.random() * (150 - 10) + 10
-            const left = Math.random() * (600 - 10) + 10
-            const right = Math.random() * (600 - 10) + 10
-            const size = Math.floor(5 * Math.random()) + 7
-            const color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
-
-            newDots.push({id: i, top, bottom, left, right, size, color})
-        }
-
-        return newDots
-    }
-
     const Dots = [
         {
             "id": 0,
